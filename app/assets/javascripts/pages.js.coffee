@@ -5,3 +5,75 @@
 $ ->
   $('#sweetSuccess').click ->
     sweetAlert('Congratulations!', 'Your message has been successfully sent', 'success')
+
+$ ->
+  $('.quick-text-post').click ->
+    swal({
+      title: 'Title',
+      type: 'input',
+      showCancelButton: true,
+      closeOnConfirm: false,
+      animation: 'slide-from-top',
+      inputPlaceHolder: 'Title'
+      },
+      quick = (inputValue) ->
+        return false if inputValue == false
+
+        if (inputValue == "false")
+          swal.showInputError("You need a title!");
+          return false
+
+        swal({
+          title: 'Content',
+          type: 'input',
+          showCancelButton: true,
+          closeOnConfirm: false,
+          animation: 'slide-from-top',
+          inputPlaceHolder: 'Title'
+          },
+          quick = (inputValue) ->
+            return false if inputValue == false
+
+            if (inputValue == "false")
+              swal.showInputError("You need a title!");
+              return false
+
+            swal("Published!", "", "success")
+          )
+      )
+
+$ ->
+  $('.quick-link-post').click ->
+    swal({
+      title: 'Title',
+      type: 'input',
+      showCancelButton: true,
+      closeOnConfirm: false,
+      animation: 'slide-from-top',
+      inputPlaceHolder: 'Title'
+      },
+      quick = (inputValue) ->
+        return false if inputValue == false
+
+        if (inputValue == "false")
+          swal.showInputError("You need a title!");
+          return false
+
+        swal({
+          title: 'Link',
+          type: 'input',
+          showCancelButton: true,
+          closeOnConfirm: false,
+          animation: 'slide-from-top',
+          inputPlaceHolder: 'Title'
+          },
+          quick = (inputValue) ->
+            return false if inputValue == false
+
+            if (inputValue == "false")
+              swal.showInputError("You need a title!");
+              return false
+
+            swal("Published!", "", "success")
+          )
+      )
