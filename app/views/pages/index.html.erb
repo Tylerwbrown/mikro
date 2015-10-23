@@ -5,9 +5,9 @@
       <h1>Mikro</h1>
       <p>The solution to world hunger.</p>
       <br />
-      <button type="button" class="btn btn-default btn-block">New Text Post</button>
+      <button type="button" class="btn btn-default btn-block disabled">New Text Post</button>
       <br />
-      <button type="button" class="btn btn-default btn-block">New Link Post</button>
+      <button type="button" class="btn btn-default btn-block disabled">New Link Post</button>
     </div>
     <div class="col-xs-6"></div>
     <div class="col-xs-3">
@@ -19,12 +19,15 @@
         <input id="password" type="text" class="validate">
         <label for="password">Password</label>
       </div>
-      <div class="col-xs-9">
+      <div class="col-xs-8">
         <input type="checkbox" id="remember-me" />
         <label for="remember-me">Remember Me</label>
       </div>
-      <div class="col-xs-3">
-        <button type="button" class="btn btn-success">Login</button>
+      <div class="col-xs-4">
+        <button type="button" class="btn btn-success btn-block">Login</button>
+        or
+        <br />
+        <a href="<%= new_user_path %>" class="btn btn-info btn-block">Sign Up</a>
       </div>
     </div>
   </div>

@@ -1,14 +1,17 @@
-<%= simple_form_for(@user) do |f| %>
-  <%= f.error_notification %>
+<div class="col-xs-6">
+  <%= simple_form_for(@user, defaults: {wrapper_html: {class: 'input-field'}, required: false}) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :email %>
-    <%= f.input :password %>
-    <%= f.input :password_confirmation %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.input :email %>
+      <%= f.input :password %>
+      <%= f.input :password_confirmation %>
+    </div>
+    <br />
+    <div class="form-actions">
+      <button name="commit" type="submit" class="btn btn-success">Sign Up!</button>
+    </div>
+  <% end %>
+  <a href="/" class="btn btn-link">Cancel</a>
+</div>
