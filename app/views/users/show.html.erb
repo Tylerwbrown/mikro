@@ -1,4 +1,9 @@
 <p id="notice"><%= notice %></p>
+<% if !notice.nil? %>
+  <script>
+    sweetLogin();
+  </script>
+<% end %>
 
 <p>
   <strong>Name:</strong>
