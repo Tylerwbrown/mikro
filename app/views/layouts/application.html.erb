@@ -38,7 +38,12 @@
           <li><a class="navbar-links" href="#">Messages</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a class="navbar-links" href="/login">Log In</a></li>
+          <% if logged_in? %>
+            <li><%= link_to 'Profile', current_user, class: 'navbar-links' %></li>
+            <li><%= link_to "Log out", logout_path, class: 'navbar-links', method: :delete %></li>
+          <% else %>
+            <li><a class="navbar-links" href="/login">Log In</a></li>
+          <% end %>
         </ul>
 
       </div><!-- /.navbar-collapse -->

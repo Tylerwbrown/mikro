@@ -1,25 +1,11 @@
-
+<p id="notice"><%= notice %></p>
+<% if !notice.nil? %>
+  <script>
+    failedLogin();
+  </script>
+<% end %>
 <% provide(:title, "Log in") %>
 <h1>Log in</h1>
-
-<div class="row">
-  <%= simple_form_for(:session, url: login_path, defaults: {wrapper_html: {class: 'input-field'}, required: false}) do |f| %>
-    <div class="row">
-    <%= f.input :email %>
-    </div>
-    <div class="row">
-    <%= f.input :password, label_html: {class: 'bob'} %>
-    </div>
-    <div class="row">
-      <div class="col-xs-5 no-pad">
-        <button name="commit" type="submit button" class="btn btn-success btn-block">Login</button>
-      </div>
-      <div class="col-xs-2 text-center">
-        or
-      </div>
-      <div class="col-xs-5 no-pad">
-        <a href="<%= new_user_path %>" class="btn btn-info btn-block">Sign Up</a>
-      </div>
-    </div>
-  <% end %>
+<div class="col-xs-6">
+  <%= render partial: 'pages/login_form' %>
 </div>

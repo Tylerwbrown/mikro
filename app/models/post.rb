@@ -4,4 +4,6 @@ class Post < ActiveRecord::Base
 
   #Validations
   validates :content, presence: true
+  validates :user_id, presence: true
+  validates :title, presence: true
 end

@@ -1,3 +1,9 @@
-<button type="button" class="btn btn-default btn-block disabled">New Text Post</button>
-<br />
-<button type="button" class="btn btn-default btn-block disabled">New Link Post</button>
+<% if logged_in? %>
+  <button type="button" class="btn btn-default btn-block">New Text Post</button>
+  <br />
+  <button type="button" class="btn btn-default btn-block">New Link Post</button>
+<% else %>
+  <button type="button" class="btn btn-default btn-block disabled">New Text Post (Log in to post)</button>
+  <br />
+  <button type="button" class="btn btn-default btn-block disabled">New Link Post (Log in to post)</button>
+<% end %>
