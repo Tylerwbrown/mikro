@@ -1,0 +1,5 @@
+  <%= simple_form_for(@post, defaults: {required: false}) do |p| %>
+    <%= p.input :content %>
+
+    <%= p.button :submit, class: 'btn btn-success' %>
+  <% end %>

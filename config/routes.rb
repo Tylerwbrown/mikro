@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'sessions/new'
+  get 'posts/new'
 
   resources :users
   resources :posts, only: [:create, :destroy]
