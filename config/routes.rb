@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   get 'sessions/new'
 
-  resources :posts
-
   resources :users
+  resources :posts, only: [:create, :destroy]
 
   get 'pages/index'
   root 'pages#index'
