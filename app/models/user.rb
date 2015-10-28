@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
   #Associations
-  has_many :posts
+  has_many :posts, dependent: :destroy
 
   #Accessors
   attr_accessor :remember_token
@@ -35,5 +35,9 @@ class User < ActiveRecord::Base
 
   def forget
     update_attribute(:remember_digest, nil)
+  end
+
+  def feed
+    Post.where("user_id = ?", id)
   end
 end
