@@ -1,5 +1,13 @@
 class PostsController < ApplicationController
 
+  def index
+    @posts = Post.all
+  end
+
+  def show
+    @post = Post.find(params[:id])
+  end
+
   def new
     @post = current_user.posts.new
   end
@@ -18,10 +26,18 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post.destroy
+    respond_to do |format|
+      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
   private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:content)
+      params.require(:post).permit(:content, :title)
     end
 end

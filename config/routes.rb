@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'posts/new'
 
   resources :users
-  resources :posts, only: [:create, :destroy]
+  resources :posts
 
   get 'pages/index'
   root 'pages#index'
