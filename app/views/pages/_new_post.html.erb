@@ -1,10 +1,3 @@
-<% if logged_in? %>
-  <%= link_to 'New Post', 'posts/new' %>
-  <button type="button" class="btn btn-default btn-block">New Text Post</button>
-  <br />
-  <button type="button" class="btn btn-default btn-block">New Link Post</button>
-<% else %>
-  <button type="button" class="btn btn-default btn-block disabled">New Text Post (Log in to post)</button>
-  <br />
-  <button type="button" class="btn btn-default btn-block disabled">New Link Post (Log in to post)</button>
-<% end %>
+<a href='posts/new' class="btn btn-default btn-block <%= 'disabled' if !logged_in? %>">New Text Post <%= '(Log in to Post)' if !logged_in? %></a>
+<br />
+<a class="btn btn-default btn-block disabled">New Link Post (Not available)</a>
