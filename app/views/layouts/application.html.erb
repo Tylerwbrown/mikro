@@ -44,6 +44,7 @@
             <li><%= link_to 'Profile', current_user, class: 'navbar-links' %></li>
             <li><%= link_to "Log out", logout_path, class: 'navbar-links', method: :delete %></li>
           <% else %>
+            <li><a class="navbar-links" href="<%= new_user_path %>">Sign Up</a></li>
             <li><a class="navbar-links" href="/login">Log In</a></li>
           <% end %>
         </ul>
