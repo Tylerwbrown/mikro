@@ -6,5 +6,5 @@ class Post < ActiveRecord::Base
   validates :user_id, presence: true
   validates :content, presence: true
   validates :title, presence: true, length: {maximum: 50}
-  validates :category, length: {maximum: 35}
+  validates :category, length: {maximum: 25}
 end
