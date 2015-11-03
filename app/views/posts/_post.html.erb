@@ -8,6 +8,12 @@
       <a href="posts/<%= post.id %>">See Comments</a>
       <label>Creator</label>
       <%= User.find(post.user_id).name %>
+      <% if !post.category.nil? %>
+        <div class="pull-right">
+          <label>Category</label>
+          <%= post.category %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
