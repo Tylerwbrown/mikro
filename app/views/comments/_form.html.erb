@@ -2,12 +2,20 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.hidden_field :user_name, value: current_user.name %>
-    <%= f.input :body, label: false %>
-    <%= f.hidden_field :post_id  %>
+    <% if current_user.nil? %>
+      <%= f.input :body, label: false, disabled: true, placeholder: "Login to make a comment" %>
+    <% else %>
+      <%= f.hidden_field :user_name, value: current_user.name %>
+      <%= f.input :body, label: false %>
+      <%= f.hidden_field :post_id  %>
+    <% end %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <% if current_user.nil? %>
+      <%= f.button :submit, disabled: true if current_user.nil? %>
+    <% else %>
+      <%= f.button :submit %>
+    <% end %>
   </div>
 <% end %>
