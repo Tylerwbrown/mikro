@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<h2 class="text-center">
+  <strong>Category:</strong>
+  <%= @category.title %>
+</h2>
+<% @posts.each do |post| %>
+  <%= render partial: "/posts/post", locals: {post: post} %>
+<% end %>

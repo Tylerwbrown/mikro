@@ -10,7 +10,9 @@
       <br />
 
       <label>Category</label>
-      <%= post.category %>
+      <% if post.category.to_i > 0 %>
+        <%= Category.find(post.category.to_i).title %>
+      <% end %>
       <br />
 
       <a href="posts/<%= post.id %>">See Full Post</a>

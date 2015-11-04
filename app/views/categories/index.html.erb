@@ -1,0 +1,9 @@
+<h1 class="text-center">Categories</h1>
+<% @categories.each do |category| %>
+  <a href="/categories/<%= category.id %>" class="user-card card-panel teal">
+    <span class="white-text"><%= category.title %></span>
+  </a>
+<% end %>
+<br><br>
+
+<%= link_to 'New Category', new_category_path %>

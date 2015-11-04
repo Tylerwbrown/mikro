@@ -2,7 +2,7 @@
   <%= simple_form_for(@post, defaults: {required: false}) do |p| %>
     <%= p.input :title, wrapper_class: 'input-field' %>
     <%= p.input :content %>
-    <%= p.input :category, label: 'Category(optional)' %>
+    <%= p.input :category, collection: Category.all %>
 
     <%= p.button :submit, class: 'btn btn-success' %>
   <% end %>
