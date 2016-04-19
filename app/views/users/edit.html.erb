@@ -1,16 +1,11 @@
-<div class="col-xs-12 col-md-6">
-  <%= simple_form_for(@user, defaults: {required: false}) do |f| %>
-    <%= f.error_notification %>
+<%= simple_form_for(@user, defaults: {required: false}) do |f| %>
+  <%= f.error_notification %>
 
-    <div class="form-inputs">
-      <%= f.input :name %>
-      <%= f.input :email %>
-      <%= f.input :password, label: 'Update password' %>
-      <%= f.input :password_confirmation %>
-    </div>
-    <br />
-    <div class="form-actions col-xs-12 col-md-6">
-      <button name="commit" type="submit" class="btn btn-success btn-block">Update</button>
-    </div>
-  <% end %>
-</div>
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :email %>
+    <%= f.input :password, label: 'Update password' %>
+    <%= f.input :password_confirmation %>
+    <%= f.button :submit, "Update" %>
+  </div>
+<% end %>

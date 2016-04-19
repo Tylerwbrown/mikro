@@ -1,4 +1,10 @@
-<% if !@feed_items.nil? %>
-  <%= render @feed_items %>
-  <%= will_paginate @feed_items %>
+<% if @feed_items.present? %>
+  <div class="row">
+    <% @feed_items.each do |item| %>
+      <div class="col s12 m6 l4">
+        <%= render item, full_post: false %>
+      </div>
+    <% end %>
+    <%= will_paginate @feed_items %>
+  </div>
 <% end %>

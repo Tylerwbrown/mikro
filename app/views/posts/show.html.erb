@@ -1,14 +1,4 @@
-<div class="card blue-grey darken-1">
-  <div class="card-content white-text">
-    <span class="card-title"><%= @post.title %></span>
-    <p><%= @post.content %></p>
-  </div>
-  <div class="card-action white-text">
-    <label>Creator</label>
-    <%= User.find(@post.user_id).name %>
-  </div>
-</div>
-
+<%= render "post", post: @post, full_post: true %>
 <%= render '/comments/new' %>
 
 <h3>Comments</h3>

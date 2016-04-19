@@ -1,9 +1,7 @@
-<div class="col-xs-12">
-  <%= simple_form_for(@post, defaults: {required: false}) do |p| %>
-    <%= p.input :title, wrapper_class: 'input-field' %>
-    <%= p.input :content %>
-    <%= p.input :category, collection: Category.all %>
+<%= simple_form_for(@post, defaults: {required: false}) do |p| %>
+  <%= p.input :title, wrapper_class: 'input-field' %>
+  <%= p.input :content %>
+  <%= p.input :category, collection: Category.all %>
 
-    <%= p.button :submit, class: 'btn btn-success' %>
-  <% end %>
-</div>
+  <%= p.button :submit %>
+<% end %>
