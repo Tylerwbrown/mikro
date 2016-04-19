@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   resources :users
   resources :posts
 
-  get 'pages/index'
-  root 'pages#index'
+  get 'layouts/index'
+  root 'layouts#index'
 
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
