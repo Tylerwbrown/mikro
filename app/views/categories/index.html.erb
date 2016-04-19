@@ -1,4 +1,4 @@
-<h1 class="text-center">Categories</h1>
+<% provide :title, "Categories" %>
 <% @categories.each do |category| %>
   <a href="/categories/<%= category.id %>" class="user-card card-panel teal">
     <span class="white-text"><%= category.title %></span>
