@@ -1,10 +1,3 @@
 /tmp/*
 log/
-tmp/cache/assets/development/sprockets/f7cbd26ba1d28d48de824f0e94586655
-tmp/cache/assets/development/sprockets/b7cf1ee5c56fa85d2cf039f2541df071
-tmp/cache/assets/development/sprockets/2f5173deea6c795b8fdde723bb4b63af
-tmp/cache/assets/development/sprockets/8f2511830f6e103d24928dac99a5cf5a
-tmp/cache/assets/development/sprockets/cffd775d018f68ce5dba1ee0d951a994
-tmp/cache/assets/development/sprockets/357970feca3ac29060c1e3861e2c0953
-tmp/cache/assets/development/sprockets/8f2511830f6e103d24928dac99a5cf5a
-tmp/cache/assets/development/sprockets/f5f738b65b700d4d150982435be7b758
+.bundle/
