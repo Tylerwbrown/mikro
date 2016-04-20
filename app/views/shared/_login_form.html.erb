@@ -1,0 +1,6 @@
+<%= simple_form_for(:session, url: login_path, defaults: {wrapper_html: {class: 'input-field'}, required: false}) do |f| %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.button :submit, "Log In" %>
+  <%= button_to t('sign_up'), new_user_path, class: 'btn' %>
+<% end %>

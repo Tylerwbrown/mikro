@@ -1,11 +1,4 @@
 <p id="notice"><%= notice %></p>
-<% if !notice.nil? %>
-  <script>
-    failedLogin();
-  </script>
-<% end %>
 <% provide(:title, "Log in") %>
 <h1>Log in</h1>
-<div class="col-xs-6">
-  <%= render partial: 'pages/login_form' %>
-</div>
+<%= render partial: 'shared/login_form' %>

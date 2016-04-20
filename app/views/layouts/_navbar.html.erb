@@ -1,0 +1,22 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo center">Mikro</a>
+    <ul id="nav-mobile" class="hide-on-med-and-down">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/categories">Categories</a></li>
+        <li><a href="/users">Users</a></li>
+    </ul>
+
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <% if logged_in? %>
+        <li><a class="navbar-links" href="/posts/new">New Post</a></li>
+        <li><%= link_to 'Profile', current_user, class: 'navbar-links' %></li>
+        <li><%= link_to "Log out", logout_path, class: 'navbar-links', method: :delete %></li>
+      <% else %>
+        <li><a class="navbar-links" href="<%= new_user_path %>">Sign Up</a></li>
+        <li><a class="navbar-links" href="/login">Log In</a></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
