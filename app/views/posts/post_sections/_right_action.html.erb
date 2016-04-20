@@ -1,0 +1,6 @@
+<div class="col s<%= col_size %> right">
+  <div class="right">
+    <label>Category</label><br />
+    <%= Category.find(post.category.to_i).title if post.category.present? %>
+  </div>
+</div>
