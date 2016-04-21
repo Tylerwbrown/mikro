@@ -1,0 +1,7 @@
+<div class="row">
+  <%= User.find(post.user_id).name %>
+
+  <div class="right">
+    <%= Category.find(post.category.to_i).title if post.category.present? %>
+  </div>
+</div>

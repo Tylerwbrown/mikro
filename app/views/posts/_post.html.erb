@@ -1,23 +1,17 @@
 <div class="card blue-grey darken-1">
   <div class="card-content white-text">
-    <span class="card-title"><%= post.title %></span>
-    <p><%= full_post ? post.content : post.content.truncate(103) %></p>
+    <% overflow = "post-overflow-control" unless full_post %>
+    <div class="card-title <%= overflow %>">
+      <strong><%= post.title %></strong>
+    </div>
+    <p class="<%= overflow %>">
+      <%= post.content %>
+    </p>
   </div>
+
   <div class="card-action white-text row">
-    <div class="col s4">
-      <label>Creator</label>
-      <%= User.find(post.user_id).name %>
-    </div>
-    <% unless full_post %>
-      <div class="col s4 center">
-        <a href="/posts/<%= post.id %>">Full Post</a>
-      </div>
-    <% end %>
-    <div class="col s4 right">
-      <div class="right">
-        <label>Category</label>
-        <%= Category.find(post.category.to_i).title if post.category.present? %>
-      </div>
-    </div>
+    <% col_size = full_post ? { left: 6, center: 0, right: 6 } : { left: 2, center: 8, right: 2 } %>
+    <%= render 'posts/post_sections/top_action_row', col_size: col_size, post: post %>
+    <%= render 'posts/post_sections/bottom_action_row', post: post %>
   </div>
 </div>

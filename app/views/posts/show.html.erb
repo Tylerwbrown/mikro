@@ -1,10 +1,13 @@
 <div class="row">
-  <div class="col s12 l6"><%= render "post", post: @post, full_post: true %></div>
-  <div class="col s12 l6"><%= render '/comments/new' %></div>
-</div>
-<h3>Comments</h3>
-<div class="container">
-  <% @comments.each do |comment| %>
-    <%= render '/comments/show', comment: comment%>
-  <% end %>
+  <div class="col s12 m7 l8">
+    <%= render "post", post: @post, full_post: true %>
+  </div>
+
+  <div class="col s12 m5 l4">
+    <%= render '/comments/new' %>
+    <h3>Comments</h3>
+    <% @comments.each do |comment| %>
+      <%= render '/comments/show', comment: comment%>
+    <% end %>
+  </div>
 </div>
