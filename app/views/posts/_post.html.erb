@@ -1,9 +1,10 @@
 <div class="card blue-grey darken-1">
   <div class="card-content white-text">
-    <div class="card-title post-overflow-control">
+    <% overflow = "post-overflow-control" unless full_post %>
+    <div class="card-title <%= overflow %>">
       <strong><%= post.title %></strong>
     </div>
-    <p class="post-overflow-control">
+    <p class="<%= overflow %>">
       <%= post.content %>
     </p>
   </div>
