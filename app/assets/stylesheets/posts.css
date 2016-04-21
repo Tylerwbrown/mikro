@@ -1,5 +1,18 @@
-.post_content {
+.post-overflow-control {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.card-action.row {
+  padding-bottom: 0;
+  padding-top: .3em;
+}
+
+.top-row.row {
+  margin-bottom: 0;
+}
+
+.col.s0 {
+  display: none;
 }

@@ -1,6 +1,9 @@
 <div class="row">
-  <div class="col s12 m6 l8"><%= render "post", post: @post, full_post: true %></div>
-  <div class="col s12 m6 l4">
+  <div class="col s12 m7 l8">
+    <%= render "post", post: @post, full_post: true %>
+  </div>
+
+  <div class="col s12 m5 l4">
     <%= render '/comments/new' %>
     <h3>Comments</h3>
     <% @comments.each do |comment| %>
