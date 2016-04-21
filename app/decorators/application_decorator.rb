@@ -1,9 +1,19 @@
 class ApplicationDecorator < Draper::Decorator
-  def formatted_columns
-    self.class.column_names.reject { |e| invisible_columns.include? e }.map { |c| [c.gsub("_", " ").capitalize, self.send(c).to_s] }.to_h
+
+  def visible_columns
+    attributes.keys.select { |e| visible_column_list.include? e }
   end
 
-  def invisible_columns
+  def enabled_columns
+    attributes.keys.select { |e| enabled_column_list.include? e }
+  end
+
+  def visible_column_list
     raise NotImplementedError
   end
+
+  def enabled_column_list
+    raise NotImplementedError
+  end
+
 end

@@ -1,7 +1,11 @@
 class UserDecorator < ApplicationDecorator
   delegate_all
 
-  def invisible_columns
-    ["password_digest", "name", "remember_digest"]
+  def visible_column_list
+    ["id"]
+  end
+
+  def enabled_column_list
+    ["email", "password"]
   end
 end

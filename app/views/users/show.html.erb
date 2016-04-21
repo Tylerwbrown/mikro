@@ -3,13 +3,11 @@
   <script>sweetLogin();</script>
 <% end %>
 <h2 class="center"><%= @user.name %></h2>
-<% @user.formatted_columns.each_pair do |k, v| %>
-  <strong><%= k %>: </strong><%= v %><br />
-<% end %>
-
-<h2>Posts</h2>
 <div class="row">
-  <% @posts.each do |post| %>
-    <div class="col s12 m6 l4"><%= render partial: "/posts/post", locals: {post: post, full_post: false} %></div>
-  <% end %>
+  <div class="col s12 m4 l2">
+    <%= render '/users/user_sections/profile' %>
+  </div>
+  <div class="col s12 m8 l10">
+    <%= render '/users/user_sections/posts' %>
+  </div>
 </div>
