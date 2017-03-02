@@ -1,0 +1,9 @@
+<%= simple_form_for @user do |u| %>
+  <% @user.enabled_columns.each do |c| %>
+    <%= u.input c %>
+  <% end %>
+<% end %>
+
+<% @user.visible_columns.each do |c| %>
+  <strong><%= c %>: </strong><%= @user.send(c) %><br />
+<% end %>

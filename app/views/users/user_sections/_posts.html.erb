@@ -1,0 +1,6 @@
+<h2>Posts</h2>
+<div class="row">
+  <% @posts.each do |post| %>
+    <div class="col s12 m6 l4"><%= render partial: "/posts/post", locals: {post: post, full_post: false} %></div>
+  <% end %>
+</div>
